@@ -5,7 +5,7 @@ if [ -z $ZPP_BOARD ] ; then
 fi
 
 if [ -z $ZPP_SAMPLE ] ; then
-	ZPP_SAMPLE=thread/
+	ZPP_SAMPLE=hello_world
 fi
 
 echo "board: ${ZPP_BOARD}"
@@ -15,6 +15,6 @@ source env_setup.sh
 
 pushd zephyrproject
 
-west build -b  ${ZPP_BOARD}  zpp/samples/${ZPP_SAMPLE}
+west build --pristine -b  ${ZPP_BOARD}  zpp/samples/${ZPP_SAMPLE}
 
 popd

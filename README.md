@@ -37,7 +37,7 @@ To build the sample projects the following command can be used;
 build_sample.sh
 ```
 
-By default `build_sample.sh` will build the `thread` example for the
+By default `build_sample.sh` will build the `hello_world` example for the
 `olimex_stm32_p405` board. This can be overridden by setting the `ZPP_BOARD`
 and/or `ZPP_SAMPLE` environment variables.
 
