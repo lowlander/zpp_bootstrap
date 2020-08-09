@@ -1,8 +1,8 @@
 # ZPP bootstrap scripts
 
 These scripts can be used to build and test the Zephyr zpp C++ library. They
-are currently only testet on Centos7 so might run into problems on other
-distrubutions. 
+are currently only testet on Centos8 so you might run into problems on other
+distrubutions.
 
 After cloning these scripts the first thing to do is to build the needed
 host tools with the following command;
@@ -15,26 +15,19 @@ After the tools are build the other repositories can be cloned with the
 following command;
 
 ```
-./init.sh
-```
-
-After everything is cloned the following command can be used to update
-the sources;
-
-```
-./update.sh
+./west.sh update
 ```
 
 To build the sanity checks the following command can be used;
 
 ```
-sanitycheck.sh
+./sanitycheck.sh
 ```
 
 To build the sample projects the following command can be used;
 
 ```
-build_sample.sh
+./build_sample.sh
 ```
 
 By default `build_sample.sh` will build the `hello_world` example for the
@@ -42,10 +35,9 @@ By default `build_sample.sh` will build the `hello_world` example for the
 and/or `ZPP_SAMPLE` environment variables.
 
 
-Finally `west` commands can be executed by using the following script;
+Finally other `west` commands can be executed by using the following script;
 
 ```
-west.sh
+./west.sh
 ```
-
 
