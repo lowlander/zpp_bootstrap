@@ -13,8 +13,5 @@ echo "sample: ${ZPP_SAMPLE}"
 
 source env_setup.sh
 
-pushd zephyrproject
+west build --pristine -b  ${ZPP_BOARD}  ./zephyrproject/modules/zpp/samples/${ZPP_SAMPLE}
 
-west build --pristine -b  ${ZPP_BOARD}  zpp/samples/${ZPP_SAMPLE}
-
-popd

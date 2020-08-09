@@ -1,10 +1,6 @@
 #!/bin/bash
 
-source env_setup.sh
-
-pushd zephyrproject
+source ./env_setup.sh
 
 west $@
-
-popd
 
