@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: lowlander
+      url-base: https://github.com/lowlander
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+  defaults:
+    remote: zephyrproject-rtos
+  projects:
+    - name: zephyr
+      revision: master
+      path: zephyr
+      west-commands: scripts/west-commands.yml
+      import: true
+    - name: zpp
+      remote: lowlander
+      revision: master
+      path: modules/zpp
+  self:
+    path: manifest
+
