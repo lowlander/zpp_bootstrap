@@ -1,3 +1,5 @@
-build_env
-downloads
-zephyrproject
+build/
+install/
+upstream/
+sanity-out*/
+
