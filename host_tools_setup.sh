@@ -4,8 +4,8 @@ if [ -f /opt/rh/gcc-toolset-9/enable ] ; then
         source /opt/rh/gcc-toolset-9/enable
 fi
 
-CMAKE_VERSION=3.17.3
-NINJA_VERSION=1.10.0
+CMAKE_VERSION=3.21.1
+NINJA_VERSION=1.10.2
 
 rm -rf ./install/ || exit 1
 rm -rf ./upstream/build/ || exit 1
