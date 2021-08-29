@@ -2,4 +2,6 @@ build/
 install/
 upstream/
 sanity-out*/
-
+twister-out*/
+downloads/
+build_env/
