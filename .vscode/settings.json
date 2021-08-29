@@ -56,19 +56,30 @@
 		"typeinfo": "cpp"
 	},
 	"editor.rulers": [80],
-	"editor.tabSize": 8,
-	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
 	"editor.renderWhitespace": "all",
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
-	"C_Cpp.default.cppStandard": "c++17",
+	"C_Cpp.default.cppStandard": "c++20",
 	"C_Cpp.default.cStandard": "c11",
-	"C_Cpp.default.intelliSenseMode": "gcc-x86",
+	"C_Cpp.default.intelliSenseMode": "clang-x86",
 	"files.exclude": {
+		"twister-out/": true,
 		"build_env/": true,
 		"downloads/": true,
+		"upstream/": true,
+		"build/": true,
+		"install/": true,
+		"twister*/": true,
 		"zephyrproject/build/": true,
 		"zephyrproject/sanity-out/": true,
 		"zephyrproject/tools/": true
-	}
+	},
+	"C_Cpp.default.defines": [
+		"CONFIG_POLL=1" ,
+    "CONFIG_USERSPACE=1"
+	],
+	"editor.suggest.localityBonus": true,
+	"git.ignoreLimitWarning": true
 }
