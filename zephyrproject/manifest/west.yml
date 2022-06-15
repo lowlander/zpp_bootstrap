@@ -8,7 +8,7 @@ manifest:
     remote: zephyrproject-rtos
   projects:
     - name: zephyr
-      revision: main
+      revision: v3.1-branch
       path: zephyr
       west-commands: scripts/west-commands.yml
       import: true
