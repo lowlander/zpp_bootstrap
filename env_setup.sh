@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-if [ -f /opt/rh/gcc-toolset-10/enable ] ; then
-	source /opt/rh/gcc-toolset-10/enable
+if [ -f /opt/rh/gcc-toolset-11/enable ] ; then
+	source /opt/rh/gcc-toolset-11/enable
 fi
 
 DOWNLOAD_DIR=$(readlink -f ./upstream/downloads/)
@@ -18,11 +18,13 @@ NINJA=${INSTALL_DIR}/bin/ninja
 
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
-if [ -d /data/opt/zephyr-sdk-0.13.0/ ] ; then
-	export ZEPHYR_SDK_INSTALL_DIR=/data/opt/zephyr-sdk-0.13.0/
+if [ -d /data/opt/zephyr-sdk-0.14.2/ ] ; then
+	export ZEPHYR_SDK_INSTALL_DIR=/data/opt/zephyr-sdk-0.14.2/
 else
 	export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk/
 fi
+
+source ${ZEPHYR_SDK_INSTALL_DIR}/environment-setup-x86_64-pokysdk-linux
 
 # export WEST_DIR=$(readlink -f ./zephyrproject/.west/west/)
 

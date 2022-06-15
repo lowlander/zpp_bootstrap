@@ -1,11 +1,12 @@
 #!/bin/bash
 
-if [ -f /opt/rh/gcc-toolset-9/enable ] ; then
-        source /opt/rh/gcc-toolset-9/enable
+if [ -f /opt/rh/gcc-toolset-11/enable ] ; then
+        source /opt/rh/gcc-toolset-11/enable
 fi
 
-CMAKE_VERSION=3.21.1
-NINJA_VERSION=1.10.2
+CMAKE_VERSION=3.23.2
+RE2C_VERSION=3.0
+NINJA_VERSION=1.11.0
 
 rm -rf ./install/ || exit 1
 rm -rf ./upstream/build/ || exit 1
@@ -41,6 +42,32 @@ PKG_CONFIG_PATH=${INSTALL_DIR}/lib/pkgconfig:${PKG_CONFIG_PATH}
 CMAKE=${INSTALL_DIR}/bin/cmake
 
 pushd ./upstream/build/
+
+rm -rf re2c-${RE2C_VERSION}/
+if [ ! -f ${DOWNLOAD_DIR}/re2c-${RE2C_VERSION}.tar.xz ]
+then
+	curl -Lk -o \
+		${DOWNLOAD_DIR}/re2c-${RE2C_VERSION}.tar.xz \
+		https://github.com/skvadrik/re2c/releases/download/${RE2C_VERSION}/re2c-${RE2C_VERSION}.tar.xz
+fi
+
+tar -xf ${DOWNLOAD_DIR}/re2c-${RE2C_VERSION}.tar.xz  || exit 1
+
+pushd re2c-${RE2C_VERSION}/
+
+./configure \
+	--prefix=${INSTALL_DIR}/ \
+	|| exit 1
+
+make || exit 1
+
+make install || exit 1
+
+
+popd # re2c-${RE2C_VERSION}/
+
+
+
 
 rm -rf ninja-${NINJA_VERSION}/
 
@@ -94,7 +121,7 @@ VENV_DIR=${INSTALL_DIR}/zephyr_venv/
 rm -rf $VENV_DIR
 mkdir -p $VENV_DIR
 
-virtualenv $VENV_DIR
+virtualenv -p python3.8 $VENV_DIR
 
 source $VENV_DIR/bin/activate
 
