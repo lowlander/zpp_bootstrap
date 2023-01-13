@@ -1,7 +1,7 @@
 # ZPP bootstrap scripts
 
 These scripts can be used to build and test the Zephyr zpp C++ library. They
-are currently only testet on Centos8 so you might run into problems on other
+are currently only testet on Alma 9 so you might run into problems on other
 distrubutions.
 
 After cloning these scripts the first thing to do is to build the needed
@@ -18,10 +18,10 @@ following command;
 ./west.sh update
 ```
 
-To build the sanity checks the following command can be used;
+To build the checks the following command can be used;
 
 ```
-./sanitycheck.sh
+./twister.sh
 ```
 
 To build the sample projects the following command can be used;
