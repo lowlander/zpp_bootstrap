@@ -121,13 +121,13 @@ VENV_DIR=${INSTALL_DIR}/zephyr_venv/
 rm -rf $VENV_DIR
 mkdir -p $VENV_DIR
 
-virtualenv -p python3.8 $VENV_DIR
+virtualenv -p python3.9 $VENV_DIR  || exit 1
 
-source $VENV_DIR/bin/activate
+source $VENV_DIR/bin/activate 
 
-pip3 install --upgrade pip
-pip3 install --upgrade setuptools
-pip3 install --upgrade west
+pip3 install --upgrade pip || exit 1
+pip3 install --upgrade setuptools || exit 1
+pip3 install --upgrade west || exit 1
 
-pip3 install -r ./zephyrproject/zephyr/scripts/requirements.txt
+pip3 install -r ./zephyrproject/zephyr/scripts/requirements.txt || exit 1
 

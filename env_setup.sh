@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-if [ -f /opt/rh/gcc-toolset-11/enable ] ; then
-	source /opt/rh/gcc-toolset-11/enable
+if [ -f /opt/rh/gcc-toolset-12/enable ] ; then
+	source /opt/rh/gcc-toolset-12/enable
 fi
 
 DOWNLOAD_DIR=$(readlink -f ./upstream/downloads/)
@@ -18,8 +18,8 @@ NINJA=${INSTALL_DIR}/bin/ninja
 
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
-if [ -d /data/opt/zephyr-sdk-0.14.2/ ] ; then
-	export ZEPHYR_SDK_INSTALL_DIR=/data/opt/zephyr-sdk-0.14.2/
+if [ -d /opt/zephyr-sdk-0.15.2/ ] ; then
+	export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-0.15.2/
 else
 	export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk/
 fi
