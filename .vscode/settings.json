@@ -81,5 +81,6 @@
     "CONFIG_USERSPACE=1"
 	],
 	"editor.suggest.localityBonus": true,
-	"git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "editor.bracketPairColorization.enabled": true
 }
